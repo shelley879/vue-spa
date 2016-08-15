@@ -25,6 +25,7 @@ module.exports = {
     fallback: [path.join(__dirname, '../node_modules')]
   },
   module: {
+    /* 暂时去掉eslint
     preLoaders: [
       {
         test: /\.vue$/,
@@ -39,6 +40,7 @@ module.exports = {
         exclude: /node_modules/
       }
     ],
+    */
     loaders: [
       {
         test: /\.vue$/,
