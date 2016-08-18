@@ -5,3 +5,14 @@ npm-debug.log
 selenium-debug.log
 test/unit/coverage
 test/e2e/reports
+.idea/
+.idea/dictionaries/
+.idea/encodings.xml
+.idea/jsLibraryMappings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vue-spa.iml
+.idea/watcherTasks.xml
+.idea/workspace.xml
+.idea/vcs.xml
+.idea/dictionaries/5ixinxin.xml
