@@ -1,5 +1,18 @@
 <template>
   <div class="container">
+    <Multiselect
+      :selected="selected"
+      :options="options"
+      :searchable="true"
+      select-label="点击选择"
+      deselect-Label="点击移出"
+      selected-label="已选中"
+      label="title"
+      key="search"
+      placeholder="选择国家"
+      @update="updateSelected">
+    </Multiselect>
+    <p>{{selected | json}}</p>
     <a v-link="{ path: '/' }">Go to Fooggg</a>
     <a v-link="{ path: '/bar' }">Go to Bar</a>
     <router-view></router-view>
@@ -7,16 +20,54 @@
 </template>
 
 <script>
+import Multiselect from 'vue-multiselect';
+
+var searchOption = [
+      {
+        title : 'aa',
+        search : '11'
+      },
+      {
+        title : 'bb',
+        search : '22'
+      },
+      {
+        title : 'cc',
+        search : '33'
+      },
+      {
+        title : 'dd',
+        search : '44'
+      },
+      {
+        title : 'ee',
+        search : '55'
+      }
+      ];
 
 export default {
-    replace: false,
+  components: { 
+    Multiselect
+  },
+  replace: false,
+  data () {
+    return {
+      selected: null,
+      options: searchOption,
+      dataResult : null
+    }
+  },
+  methods: {
+    updateSelected (newSelected) {
+      this.selected = newSelected
+    }
+  }
 };
 </script>
 
 <style lang='scss'>
 $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
-
 html {
   height: 100%;
 }

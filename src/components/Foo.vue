@@ -20,6 +20,13 @@ export default {
             console.log(response.status);
         });
 
+        this.$http.delete('/api/localTest').then((response) => {
+            // success callback
+            console.log("local test delete:"+response.text());
+        }, (response) => {
+            console.log(response.status);
+        });
+
         this.$http.get('/api/novsky/getVendors').then((response) => {
             // success callback
             console.log("get:"+response.text());
