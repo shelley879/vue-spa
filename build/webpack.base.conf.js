@@ -25,22 +25,20 @@ module.exports = {
     fallback: [path.join(__dirname, '../node_modules')]
   },
   module: {
-    /* 暂时去掉eslint
     preLoaders: [
       {
         test: /\.vue$/,
-        loader: 'eslint',
+        loader: 'jshint',
         include: projectRoot,
         exclude: /node_modules/
       },
       {
         test: /\.js$/,
-        loader: 'eslint',
+        loader: 'jshint',
         include: projectRoot,
         exclude: /node_modules/
       }
     ],
-    */
     loaders: [
       {
         test: /\.vue$/,
@@ -78,8 +76,21 @@ module.exports = {
       }
     ]
   },
-  eslint: {
-    formatter: require('eslint-friendly-formatter')
+  jshint: {
+    "asi"      : true,
+    "browser"  : true,
+    "eqeqeq"   : false,
+    "eqnull"   : true,
+    "expr"     : true,
+    "jquery"   : true,
+    "latedef"  : "nofunc",
+    "laxbreak" : true,
+    "nonbsp"   : true,
+    "strict"   : false,
+    "undef"    : true,
+    "unused"   : false,
+    "esversion"   : 6,
+    "predef":  ["AdminLTEOptions","Morris"]
   },
   vue: {
     loaders: utils.cssLoaders()
