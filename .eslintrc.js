@@ -1,0 +1,29 @@
+module.exports = {
+  root: true,
+  parser: 'babel-eslint',
+  parserOptions: {
+    sourceType: 'module'
+  },
+  extends: 'airbnb-base',
+  // required to lint *.vue files
+  plugins: [
+    'html'
+  ],
+  // add your custom rules here
+  'rules': {
+    'import/no-unresolved': 0,
+    // allow debugger during development
+    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
+    "indent": 'off',
+    "quotes":'off',
+    "key-spacing":'off',
+    "quote-props":'off',
+    "comma-spacing":'off',
+    "object-curly-spacing":'off',
+    "space-infix-ops":'off',
+    "prefer-const":'off',
+    "no-console": 'off',
+    "max-len":'off',
+    "comma-dangle":'off'
+  }
+}

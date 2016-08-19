@@ -26,18 +26,18 @@ module.exports = {
   },
   module: {
     preLoaders: [
-      {
-        test: /\.vue$/,
-        loader: 'jshint',
-        include: projectRoot,
-        exclude: /node_modules/
-      },
-      {
-        test: /\.js$/,
-        loader: 'jshint',
-        include: projectRoot,
-        exclude: /node_modules/
-      }
+          {
+            test: /\.vue$/,
+            loader: 'eslint',
+            include: projectRoot,
+            exclude: /node_modules/
+          },
+          {
+            test: /\.js$/,
+            loader: 'eslint',
+            include: projectRoot,
+            exclude: /node_modules/
+          }
     ],
     loaders: [
       {
@@ -76,21 +76,8 @@ module.exports = {
       }
     ]
   },
-  jshint: {
-    "asi"      : true,
-    "browser"  : true,
-    "eqeqeq"   : false,
-    "eqnull"   : true,
-    "expr"     : true,
-    "jquery"   : true,
-    "latedef"  : "nofunc",
-    "laxbreak" : true,
-    "nonbsp"   : true,
-    "strict"   : false,
-    "undef"    : true,
-    "unused"   : false,
-    "esversion"   : 6,
-    "predef":  ["AdminLTEOptions","Morris"]
+  eslint: {
+    formatter: require('eslint-friendly-formatter')
   },
   vue: {
     loaders: utils.cssLoaders()

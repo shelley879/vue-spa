@@ -22,44 +22,44 @@
 <script>
 import Multiselect from 'vue-multiselect';
 
-var searchOption = [
+const searchOption = [
       {
         title : 'aa',
-        search : '11'
+        search : '11',
       },
       {
         title : 'bb',
-        search : '22'
+        search : '22',
       },
       {
         title : 'cc',
-        search : '33'
+        search : '33',
       },
       {
         title : 'dd',
-        search : '44'
+        search : '44',
       },
       {
         title : 'ee',
-        search : '55'
-      }
+        search : '55',
+      },
       ];
 
 export default {
-  components: { 
-    Multiselect
+  components: {
+    Multiselect,
   },
   replace: false,
-  data () {
+  data() {
     return {
       selected: null,
       options: searchOption,
-      dataResult : null
-    }
+      dataResult : null,
+    };
   },
   methods: {
-    updateSelected (newSelected) {
-      this.selected = newSelected
+    updateSelected(newSelected) {
+      this.selected = newSelected;
     }
   }
 };
